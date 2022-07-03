@@ -262,7 +262,7 @@ footer .social-media-group .social-media-item img {
 
 #home .banner {
   position: relative;
-  background-image: url("../../img/pictures/home/pexels-photo-416676.jpeg");
+  background-image: url("../img/pictures/home/pexels-photo-416676.jpeg");
   background-position: center;
   background-size: cover;
   height: calc(100vh - 4rem);
