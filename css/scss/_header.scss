@@ -1,0 +1,111 @@
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 4rem;
+  background-color: rgba($color: #fff, $alpha: 0.9);
+  z-index: 10;
+  @include lg {
+    height: 6rem;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    img {
+      width: 2rem;
+      height: 2rem;
+      @include lg {
+        width: 4rem;
+        height: 4rem;
+        margin-right: 0.5rem;
+      }
+    }
+    h1 {
+      font-size: 1.25rem;
+      @include lg {
+        letter-spacing: 2px;
+      }
+    }
+  }
+  .nav-trigger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    border: 0;
+    width: 1.5rem;
+    height: 1rem;
+    z-index: 10;
+    @include md {
+      display: none;
+    }
+    span {
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      transition: 0.2s;
+    }
+    &.active span {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+      &:nth-child(2) {
+        transform: scaleX(0);
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+  }
+  .nav-trigger.active + .nav {
+    display: block;
+  }
+  .nav {
+    display: none;
+    @include sm {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      overflow: auto;
+      > ul {
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > li {
+          width: calc(100% - 2rem);
+          border-bottom: 1px solid rgba($color: #000000, $alpha: 0.16);
+          > a {
+            display: block;
+            text-align: center;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            color: var(--color-gray-700);
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    @include md {
+      display: block;
+      > ul {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+        a {
+          color: var(--color-primary);
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

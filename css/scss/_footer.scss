@@ -1,0 +1,60 @@
+footer {
+  background-color: #4d959d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  @include md {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @include lg {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    > img {
+      width: 4rem;
+    }
+    > h2 {
+      color: #fff;
+      font-weight: normal;
+    }
+  }
+  > nav {
+    border-bottom: 1px solid rgba($color: #fff, $alpha: 0.6);
+    padding-bottom: 0.5rem;
+    margin-bottom: 4rem;
+    @include md {
+      margin-bottom: 5rem;
+    }
+    @include lg {
+      margin-bottom: 6rem;
+    }
+    > ul {
+      display: flex;
+      gap: 1rem;
+      a {
+        color: #fff;
+      }
+    }
+  }
+  .social-media-group {
+    display: flex;
+    gap: 2rem;
+    .social-media-item {
+      width: 2rem;
+      display: flex;
+      align-items: center;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+$break-point-md: 768px;
+$break-point-lg: 992px;
+:root {
+  --color-primary: #0199a4;
+  --color-secondery: #f4b231;
+  --color-gray-700: #7b7b7b;
+  --break-point-md: $break-point-md;
+  --break-point-lg: $break-point-lg;
+}
+@mixin sm {
+  @media (max-width: calc($break-point-md - 1px)) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: $break-point-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $break-point-lg) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @include md {
+    max-width: 720px;
+  }
+  @include lg {
+    max-width: 960px;
+  }
+}
+
+.row {
+  --gutter-x: 1.5rem;
+  --gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--gutter-x) * -0.5);
+  margin-right: calc(var(--gutter-x) * -0.5);
+  > * {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin-top: var(--gutter-y);
+    padding-right: calc(var(--gutter-x) * 0.5);
+    padding-left: calc(var(--gutter-x) * 0.5);
+  }
+  > .col-12 {
+    width: 100%;
+  }
+
+  @include md {
+    > .col-md-6 {
+      width: 50%;
+    }
+  }
+  @include lg {
+    > .col-lg-4 {
+      width: 33.33%;
+    }
+  }
+}

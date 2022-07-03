@@ -1,0 +1,149 @@
+#home {
+  .banner {
+    position: relative;
+    background-image: url("../../img/pictures/pexels-photo-416676.jpeg");
+    background-position: center;
+    background-size: cover;
+    height: calc(100vh - 4rem);
+    z-index: 0;
+    @include lg {
+      height: calc(100vh - 6rem);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background-color: rgba($color: #000000, $alpha: 0.16);
+    }
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      > h2 {
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: 1.75rem;
+        color: #fff;
+        @include md {
+          font-size: 2rem;
+        }
+        @include lg {
+          font-size: 3rem;
+        }
+      }
+      .btn-start {
+        background-color: var(--color-secondery);
+        padding: 0.5rem 1rem;
+        color: #fff;
+        font-size: 1.2rem;
+        border-radius: 0.25rem;
+        border: 0;
+        line-height: 1;
+        cursor: pointer;
+        @include md {
+          font-size: 1.5rem;
+          padding: 0.75rem 1.5rem;
+        }
+        @include lg {
+          font-size: 1.75rem;
+          padding: 1rem 2rem;
+        }
+      }
+    }
+  }
+  .introduction {
+    --padding-space: 4rem;
+    padding-top: var(--padding-space);
+    padding-bottom: var(--padding-space);
+    overflow: hidden;
+    @include md {
+      --padding-space: 6rem;
+    }
+    @include lg {
+      --padding-space: 8rem;
+    }
+    .row {
+      --gutter-x: 4rem;
+      --gutter-y: 0;
+      row-gap: 6rem;
+      justify-content: center;
+    }
+    .sub-title {
+      text-align: center;
+      margin-bottom: 1rem;
+      @include md {
+        font-size: 1.25rem;
+      }
+      @include lg {
+        font-size: 1.5rem;
+      }
+    }
+    h2 {
+      text-align: center;
+      color: var(--color-primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      @include md {
+        font-size: 1.75rem;
+        letter-spacing: 4px;
+        margin-bottom: 2rem;
+      }
+      @include lg {
+        font-size: 2.5rem;
+        letter-spacing: 8px;
+        margin-bottom: 4rem;
+      }
+    }
+    .intro-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      > img {
+        display: block;
+        width: 100%;
+        border-radius: 50%;
+        max-width: 16rem;
+        margin-bottom: 2rem;
+        @include lg {
+          max-width: 14rem;
+        }
+      }
+      > h4 {
+        text-align: center;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        @include md {
+          font-size: 1.5rem;
+        }
+        @include lg {
+          font-size: 2rem;
+        }
+      }
+      > p {
+        color: var(--color-gray-700);
+        margin-bottom: 2rem;
+      }
+      > a {
+        color: #fff;
+        background-color: var(--color-primary);
+        margin-top: auto;
+        border-radius: 0.25rem;
+        padding: 0.5rem 1rem;
+        font-size: 1.125rem;
+        @include md {
+          font-size: 1.125rem;
+        }
+        @include lg {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
